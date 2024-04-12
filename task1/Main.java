@@ -8,8 +8,6 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        //member1 - это родитель member2
-        //member2 - это родитель member3 и member4
 
         FamilyTree tree = testTree();
         System.out.println(tree);
