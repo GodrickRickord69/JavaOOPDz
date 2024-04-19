@@ -1,30 +1,43 @@
 package task1;
 
+import task1.familyTree.FamilyTree;
+import task1.writable.FileHandler;
+
 public class Main {
     public static void main(String[] args) {
-        //member1 - это родитель member2
-        //member2 - это родитель member3 и member4
 
-        Person member1 = new Person("Петров", "Сергей");
-        Person member2= new Person("Петров","Павел", member1);
-        Person member3= new Person("Петров","Игорь", member2);
-        Person member4= new Person("Петрова", "Маша", member2);
+//        FamilyTree tree = testTree();
+//        System.out.println(tree);
+        FileHandler fileHandler = new FileHandler();
+        String file = "JavaOOPDZ/task1/tree.txt";
 
+        FamilyTree familyTree = new FamilyTree();
 
-        System.out.println("Перечень людей: " + Person.getPersons());
+        familyTree = (FamilyTree) fileHandler.read(file);
 
-        System.out.println();
+        System.out.println(familyTree.getInfo());
 
-        System.out.println("Дети человека 1: " + member2.getChildren());
-        System.out.println("Дети человека 2: " + member3.getChildren() + " и " + member4.getChildren());
-        //System.out.println("Дети человека 3: " + member4.getChildren());
-
-        System.out.println();
-
-        System.out.println("Родители человека 1: " + member1.getParent());
-        System.out.println("Родители человека 2: " + member2.getParent());
-        System.out.println("Родители человека 3: " + member3.getParent());
-        System.out.println("Родители человека 4: " + member4.getParent());
-
+        fileHandler.save(familyTree, file);
     }
+
+//    static FamilyTree testTree(){
+//        FamilyTree tree = new FamilyTree();
+//
+//        Human oleg = new Human("Олег", Gender.Male, LocalDate.of(1975, 5, 5));
+//        Human irina = new Human("Ирина", Gender.Female, LocalDate.of(1975, 5, 31));
+//        tree.add(oleg);
+//        tree.add(irina);
+//        tree.setWedding(oleg, irina);
+//
+//        Human darsha = new Human("Даша", Gender.Female, LocalDate.of(1999, 3, 8), oleg, irina);
+//        Human viktor = new Human("Виктор", Gender.Male, LocalDate.of(1999, 3, 8), oleg, irina);
+//        tree.add(darsha);
+//        tree.add(viktor);
+//
+//        Human grandMother = new Human("Надежда", Gender.Female, LocalDate.of(1975, 5, 31));
+//        grandMother.addChild(irina);
+//        tree.add(grandMother);
+//
+//        return tree;
+//    }
 }
