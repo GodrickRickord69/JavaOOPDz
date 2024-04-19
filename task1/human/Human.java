@@ -36,13 +36,13 @@ public class Human {
         this(name, gender, birthDate, null, father, mother);
     }
 
-//    public boolean addChild(Human child) {
-//        if (!children.contains(child)) {
-//            children.add(child);
-//            return true;
-//        }
-//        return false;
-//    }
+    public boolean addChild(Human child) {
+        if (!children.contains(child)) {
+            children.add(child);
+            return true;
+        }
+        return false;
+    }
 //
 //    public boolean addParent(Human parent) {
 //        if (parent.getGender().equals(Gender.Male)) {
