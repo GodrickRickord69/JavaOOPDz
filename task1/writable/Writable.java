@@ -1,8 +1,8 @@
 package task1.writable;
 
-import task1.familyTree.FamilyTree;
+import java.io.Serializable;
 
 public interface Writable {
-    void write(FamilyTree familyTree);
-    FamilyTree load();
+    boolean save(Serializable serializable, String file);
+    Object read(String file);
 }

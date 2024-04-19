@@ -24,14 +24,18 @@ public class FamilyTree implements Serializable {
         }
         if (!humanList.contains(human)){
             humanList.add(human);
-            human.setId(countPeople++);
-
-            addToParents(human);
-            addToChildren(human);
+            if (human.getFather() != null) human.getFather().addChild(human);
+            if (human.getMother() != null) human.getMother().addChild(human);
+            if (human.getSpousa() != null) human.getSpousa();
+            if (human.getSpouse() != null) human.getSpouse();
+//            human.setId(countPeople++);
+//
+//            addToParents(human);
+//            addToChildren(human);
 
             return true;
         }
-        return false;
+        else return false;
     }
 
     private void addToParents(Human human){
@@ -72,7 +76,7 @@ public class FamilyTree implements Serializable {
         return res;
     }
 
-    //TODO написать метод создания родственной связи
+
 
     public boolean setWedding(long humanId1, long humanId2){
         if (checkId(humanId1) && checkId(humanId2)){
