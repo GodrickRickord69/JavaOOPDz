@@ -1,10 +1,12 @@
 package task1.human;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human {
+
+public class Human implements Serializable {
     private long id;
     private String name;
     private Gender gender;
