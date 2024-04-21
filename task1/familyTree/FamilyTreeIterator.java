@@ -7,17 +7,17 @@ import java.util.List;
 
 public class FamilyTreeIterator implements Iterator<Human> {
     private List<Human> list;
-    private int id;
+    private int idex;
 
     public FamilyTreeIterator(List<Human> list){
         this.list = list;
-        id = 0;
+        idex = 0;
     }
     public boolean hasNext(){
-        return id < list.size();
+        return idex < list.size();
     }
 
     public Human next(){
-        return list.get(id++);
+        return list.get(idex++);
     }
 }
