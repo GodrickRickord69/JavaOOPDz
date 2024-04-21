@@ -15,8 +15,9 @@ public class Human {
     private List<Human> children = new ArrayList<>();
     private Human spouse;
     private Human spousa;
+    private String placeOfBirth;
 
-    public Human(String name, Gender gender, LocalDate birthDate, LocalDate deathDate, Human mother, Human father){
+    public Human(String name, Gender gender, LocalDate birthDate, String placeOfBirth, Human mother, Human father, Human spousa){
         id = -1;
         this.name = name;
         this.gender = gender;
@@ -25,16 +26,17 @@ public class Human {
         this.mother = mother;
         this.spousa = spousa;
         this.spouse = spouse;
+        this.placeOfBirth = placeOfBirth;
         children = new ArrayList<>();
     }
 
-    public Human(String name, Gender gender, LocalDate birthDate) {
-    this(name, gender, birthDate, null, null, null);
-}
-
-    public Human(String name, Gender gender, LocalDate birthDate, Human father, Human mother) {
-        this(name, gender, birthDate, null, father, mother);
+    public Human(String name, Gender gender, LocalDate birthDate, String placeOfBirth) {
+        this(name, gender, birthDate, placeOfBirth, null, null, null);
     }
+
+//    public Human(String name, Gender gender, LocalDate birthDate, String placeOfBirth, Human father, Human mother) {
+//        this(name, gender, birthDate, null, father, mother);
+//    }
 
     public boolean addChild(Human child) {
         if (!children.contains(child)) {
@@ -84,10 +86,15 @@ public class Human {
         this.birthDate = birthDate;
     }
 
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
+    }
 
     public long getId() {
         return id;
     }
+
+
 
     public String getName() {
         return name;
@@ -133,6 +140,10 @@ public class Human {
         return birthDate;
     }
 
+    public String getPlaceOfBirth(){
+        return placeOfBirth;
+    }
+
     @Override
     public String toString() {
         return getInfo();
@@ -148,7 +159,9 @@ public class Human {
         sb.append(getGender());
         sb.append(", возраст: ");
         sb.append(getBirthDate());
-        sb.append(", ");
+        sb.append(", день рождения");
+        sb.append(getPlaceOfBirth());
+        sb.append(" , место рождение: ");
         sb.append(getMotherInfo());
         sb.append(", ");
         sb.append(getFatherInfo());

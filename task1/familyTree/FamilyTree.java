@@ -1,10 +1,16 @@
 package task1.familyTree;
 
+import task1.human.Comparator.ComporatorHumanBirth;
+import task1.human.Comparator.ComporatorHumanName;
+import task1.human.Comparator.ComparatorHumanPlaceOfBirth;
 import task1.human.Human;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
+
 
 public class FamilyTree implements Serializable {
 //    private long countPeople;
@@ -164,6 +170,20 @@ public class FamilyTree implements Serializable {
             i++;
         }
         return sb.toString();
+    }
+
+    public void sortByName(){
+        humanList.sort(new ComporatorHumanName());
+    }
+    public void sortByBirth(){
+        humanList.sort(new ComporatorHumanBirth());
+    }
+    public void sortByPlaceOfBirth(){
+        humanList.sort(new ComparatorHumanPlaceOfBirth());
+    }
+
+    public Iterator<Human> iterator(){
+        return new FamilyTreeIterator(humanList);
     }
 }
 
