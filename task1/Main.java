@@ -1,6 +1,6 @@
 package task1;
 
-import task1.familyTree.FamilyTree;
+import task1.model.FamilyTree;
 import task1.Serializable.FileHandler;
 
 public class Main {

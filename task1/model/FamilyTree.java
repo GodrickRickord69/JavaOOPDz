@@ -1,9 +1,9 @@
-package task1.familyTree;
+package task1.model;
 
-import task1.human.Comparator.ComporatorHumanBirth;
-import task1.human.Comparator.ComporatorHumanName;
-import task1.human.Comparator.ComparatorHumanPlaceOfBirth;
-import task1.human.Human;
+import task1.familyTree.FamilyTreeIterator;
+import task1.model.Comparator.ComparatorHumanPlaceOfBirth;
+import task1.model.Comparator.ComporatorHumanBirth;
+import task1.model.Comparator.ComporatorHumanName;
 
 import java.io.Serializable;
 import java.util.ArrayList;

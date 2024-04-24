@@ -1,6 +1,6 @@
 package task1.familyTree;
 
-import task1.human.Human;
+import task1.model.Human;
 
 import java.util.Iterator;
 import java.util.List;

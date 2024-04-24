@@ -1,4 +1,4 @@
-package task1.human;
+package task1.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -125,17 +125,6 @@ public class Human implements Serializable {
     public List<Human> getChildren() {
         return children;
     }
-
-//    public List<Human> getParents() {
-//        List<Human> list = new ArrayList<>(2);
-//        if (father != null) {
-//            list.add(father);
-//        }
-//        if (mother != null) {
-//            list.add(mother);
-//        }
-//        return list;
-//    }
 
 
     public LocalDate getBirthDate() {

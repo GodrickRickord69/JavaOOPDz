@@ -1,6 +1,6 @@
-package task1.human.Comparator;
+package task1.model.Comparator;
 
-import task1.human.Human;
+import task1.model.Human;
 
 import java.util.Comparator;
 
