@@ -1,34 +1,44 @@
 package task1.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Animal implements Serializable, Comparable<Animal> {
+    private long id;
     private String name;
-    private String sex;
-    private int age;
+    private Gender gender;
+    private LocalDate birthDate;
+    private LocalDate deathDate;
     private Animal mother;
     private Animal father;
-    private List<Animal> children;
+    private List<Animal> children = new ArrayList<>();
+    private Animal spouse;
+    private Animal spousa;
+    private String placeOfBirth;
 
-    public Animal(String name, String sex, int age, Animal mother, Animal father) {
+
+    public Animal(String name, Gender gender, LocalDate birthDate, String placeOfBirth, Animal mother, Animal father, Animal spouse, Animal spousa) {
         this.name = name;
-        this.sex = sex;
-        this.age = age;
+        this.gender = gender;
+        this.birthDate = birthDate;
         this.mother = mother;
         this.father = father;
+        this.spouse = spouse;
+        this.spousa = spousa;
+        this.placeOfBirth = placeOfBirth;
         children = new ArrayList<>();
     }
 
-    public Animal(String name, String sex, int age) {
-        this(name, sex, age, null, null);
+    public Animal(String name, Gender gender, LocalDate birthDate, String placeOfBirth) {
+        this(name, gender, birthDate, placeOfBirth, null, null, null, null);
     }
 
     public void addChild(Animal child) {
         if (!children.contains(child)) {
             this.children.add(child);
-            if (this.sex == "муж.") {
+            if (this.gender == "муж.") {
                 child.father = this;
             } else
                 child.mother = this;
@@ -48,7 +58,7 @@ public abstract class Animal implements Serializable, Comparable<Animal> {
 
     @Override
     public String toString() {
-        String res = "Имя: " + name + ",\t Пол: " + sex + ", Возраст: " + age;
+        String res = "Имя: " + name + ",\t Пол: " + gender + ", Возраст: " + birthDate;
         if (this.mother != null) {
             res += ", Мать: " + mother.name;
         } else
@@ -76,12 +86,12 @@ public abstract class Animal implements Serializable, Comparable<Animal> {
         return mother;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(int birthDate) {
+        this.birthDate = LocalDate.ofEpochDay(birthDate);
     }
 
     @Override

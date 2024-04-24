@@ -1,20 +1,31 @@
 package task1.present;
 
+import task1.model.Comparator.ComparatorHumanPlaceOfBirth;
+import task1.model.Comparator.ComporatorHumanBirth;
+import task1.model.Comparator.ComporatorHumanName;
+import task1.model.FamilyTree;
+import task1.model.Gender;
+import task1.model.Human;
+import task1.model.IO;
+import task1.ui.View;
+
+import java.time.LocalDate;
+
 public class Presenter {
     private View view;
     private IO serialize;
     private FamilyTree<Human> familyConnect;
-    private HumanComporatorByAge sortAge;
+    private ComporatorHumanBirth sortBirtDay;
 
-    public Presenter(View view, FamilyTree<Human> familyConnect, IO serialize) {
+    public Presenter(View view, FamilyTree<Human> familyConnect, IO serialize, ComporatorHumanBirth sortByBirthDate, ComporatorHumanName sortByName, ComparatorHumanPlaceOfBirth sortByPlaceOfBirth) {
         this.familyConnect = familyConnect;
         this.view = view;
         this.serialize = serialize;
         view.setPresenter(this);
     }
 
-    public void addHumanNew(String name, String sex, int age) {
-        familyConnect.addFamilyTree(new Human(name, sex, age));
+    public void addHumanNew(String name, Gender gender, LocalDate birthDate, String placeOfBirth) {
+        familyConnect.addFamilyTree(new Human(name, gender, birthDate, placeOfBirth, null, null, null, null));
         view.print("Новый член семьи добавлен !");
     }
 
@@ -43,8 +54,18 @@ public class Presenter {
         serialize.load("TreeFamily.data");
     }
 
-    public void sortFamilyName() {
+//    public void sortFamilyName() {
+//        familyConnect.getFamilyTree().sort(null);
+//        view.print("Сортировка завершена !");
+//    }
+
+    public void sortByName(){
         familyConnect.getFamilyTree().sort(null);
-        view.print("Сортировка завершена !");
+    }
+    public void sortByBirth(){
+        familyConnect.getFamilyTree().sort(null);
+    }
+    public void sortByPlaceOfBirth(){
+        familyConnect.getFamilyTree().sort(null);
     }
 }

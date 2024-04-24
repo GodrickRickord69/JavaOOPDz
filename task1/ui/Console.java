@@ -1,7 +1,10 @@
 package task1.ui;
 
+import task1.model.Gender;
+import task1.present.Presenter;
+
+import java.time.LocalDate;
 import java.util.Scanner;
-import task1.present.Scaner;
 
 public class Console implements View {
     private Scanner scan;
@@ -39,10 +42,12 @@ public class Console implements View {
         System.out.print("Введите имя-> ");
         String name = scan();
         System.out.print("Введите пол(муж./жен.)-> ");
-        String sex = scan();
+        Gender gender = Gender.valueOf(scan());
         System.out.print("Введите возраст-> ");
-        int age = Integer.parseInt(scan());
-        presenter.addHumanNew(name, sex, age);
+        LocalDate birthDate = LocalDate.ofEpochDay(Integer.parseInt(scan()));
+        System.out.print("Введите место рождения-> ");
+        String placeOfBirth = scan();
+        presenter.addHumanNew(name, gender, birthDate, placeOfBirth);
     }
 
     public void familyPrint() {
@@ -63,10 +68,17 @@ public class Console implements View {
         presenter.loadFamily();
     }
 
-    public void sortFamilyName() {
-        presenter.sortFamilyName();
+    public void sortByName() {
+        presenter.sortByName();
     }
 
+    public void sortByBirth() {
+        presenter.sortByBirth();
+    }
+
+    public void sortByPlaceOfBirth() {
+        presenter.sortByName();
+    }
 
     public void end() {
         go = false;
