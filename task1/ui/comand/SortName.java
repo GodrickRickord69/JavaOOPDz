@@ -14,6 +14,6 @@ public class SortName extends Comand {
 
     @Override
     public void execute() {
-        getConsole().sortFamilyName();
+        getConsole().sortByName();
     }
 }

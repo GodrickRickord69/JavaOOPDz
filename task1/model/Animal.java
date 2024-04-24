@@ -90,8 +90,12 @@ public abstract class Animal implements Serializable, Comparable<Animal> {
         return birthDate;
     }
 
-    public void setBirthDate(int birthDate) {
-        this.birthDate = LocalDate.ofEpochDay(birthDate);
+    public String getPlaceOfBirth(){
+        return placeOfBirth;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     @Override
