@@ -1,23 +1,44 @@
 package task1;
 
 import task1.model.FamilyTree;
-import task1.Serializable.FileHandler;
+//import task1.Serializable.FileHandler;
+import task1.model.Human;
+import task1.model.Comparator.ComporatorHumanName;
+import task1.model.IO;
+import task1.present.Presenter;
+import task1.ui.Console;
+import task1.ui.View;
+
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
+        FamilyTree<Human> familyTree = new FamilyTree<>();
+
+
+        familyTree.addFamilyTree(new Human("Олег", "Male.", 48, "Moscow",null, null, "Ирина", null);
+        familyTree.addFamilyTree(new Human("Ирина", "Female.", 48, "Moscow", null, "Олег", null, null);
+        familyTree.getByName("Андрей");
+
+        View view = new Console();
+        IO serialize = new IO();
+        ComporatorHumanName sortName = new ComporatorHumanName();
+        new Presenter(view, familyTree, serialize, sortAge,sortName, sortPlaceOfBirth);
+        view.start();
 
 //        FamilyTree tree = testTree();
 //        System.out.println(tree);
-        FileHandler fileHandler = new FileHandler();
-        String file = "JavaOOPDZ/task1/tree.txt";
-
-        FamilyTree familyTree = new FamilyTree();
-
-        familyTree = (FamilyTree) fileHandler.read(file);
-
-        System.out.println(familyTree.getInfo());
-
-        fileHandler.save(familyTree, file);
+//        FileHandler fileHandler = new FileHandler();
+//        String file = "JavaOOPDZ/task1/tree.txt";
+//
+//        FamilyTree familyTree = new FamilyTree();
+//
+//        familyTree = (FamilyTree) fileHandler.read(file);
+//
+//        System.out.println(familyTree.getInfo());
+//
+//        fileHandler.save(familyTree, file);
     }
 
 //    static FamilyTree testTree(){

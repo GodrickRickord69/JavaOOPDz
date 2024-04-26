@@ -16,6 +16,8 @@ public class Menu {
         comand.add(new FamilyPrint(console));
         comand.add(new HumanSearch(console));
         comand.add(new SortName(console));
+        comand.add(new SortPlaceOfBirth(console));
+        comand.add(new SortAge(console));
         comand.add(new SaveFamily(console));
         comand.add(new Load(console));
         comand.add(new Exit(console));

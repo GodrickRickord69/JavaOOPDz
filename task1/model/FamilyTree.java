@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 import task1.model.Comparator.AnimalIterator;
 
-public class FamilyTree<T extends Animal> implements iterable<T>, Serializable {
+public class FamilyTree<T extends Animal> implements Iterable<T>, Serializable {
     private List<T> familyTree;
 
     public FamilyTree(){

@@ -5,12 +5,12 @@ import java.time.LocalDate;
 public class Human extends Animal{
     private static final long serialVersionUID = 1L;
 
-    public Human(String name, Gender gender, LocalDate birthDate, String placeOfBirth, Human mother, Human father, Human spousa, Human spouse){
-        super(name, gender, birthDate, placeOfBirth, mother, father, spousa, spouse);
+    public Human(String name, String gender, int age, String placeOfBirth, Human mother, Human father, Human spousa, Human spouse){
+        super(name, gender, age, placeOfBirth, mother, father, spousa, spouse);
     }
 
-    public Human(String name, Gender gender, LocalDate birthDate, String placeOfBirth, Animal mother, Animal father, Animal spousa, Animal spouse){
-        super(name, gender, birthDate, placeOfBirth, mother, father, spousa, spouse);
+    public Human(String name, String gender, int age, String placeOfBirth, Animal mother, Animal father, Animal spousa, Animal spouse){
+        super(name, gender, age, placeOfBirth, mother, father, spousa, spouse);
     }
 
 
