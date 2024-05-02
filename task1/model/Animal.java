@@ -1,7 +1,6 @@
 package task1.model;
 
 import java.io.Serializable;
-//import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,25 +12,21 @@ public abstract class Animal implements Serializable, Comparable<Animal> {
     private Animal mother;
     private Animal father;
     private List<Animal> children = new ArrayList<>();
-    private Animal spouse;
-    private Animal spousa;
     private String placeOfBirth;
 
 
-    public Animal(String name, String gender, int age, String placeOfBirth, Animal mother, Animal father, Animal spouse, Animal spousa) {
+    public Animal(String name, String gender, int age, String placeOfBirth, Animal mother, Animal father) {
         this.name = name;
         this.gender = gender;
         this.age = age;
         this.mother = mother;
         this.father = father;
-        this.spouse = spouse;
-        this.spousa = spousa;
         this.placeOfBirth = placeOfBirth;
         children = new ArrayList<>();
     }
 
     public Animal(String name, String gender, int age, String placeOfBirth) {
-        this(name, gender, age, placeOfBirth, null, null, null, null);
+        this(name, gender, age, placeOfBirth, null, null);
     }
 
     public void addChild(Animal child) {
@@ -57,7 +52,7 @@ public abstract class Animal implements Serializable, Comparable<Animal> {
 
     @Override
     public String toString() {
-        String res = "Имя: " + name + ",\t Пол: " + gender + ", День рождения: " + age;
+        String res = "Имя: " + name + ",\t Пол: " + gender + ", Возрост: " + age;
         if (this.mother != null) {
             res += ", Мать: " + mother.name;
         } else

@@ -25,7 +25,7 @@ public class Presenter {
     }
 
     public void addHumanNew(String name, String gender, Integer age, String placeOfBirth) {
-        familyConnect.addFamilyTree(new Human(name, gender, age, placeOfBirth, null, null, null, null));
+        familyConnect.addFamilyTree(new Human(name, gender, age, placeOfBirth, null, null));
         view.print("Новый член семьи добавлен !");
     }
 

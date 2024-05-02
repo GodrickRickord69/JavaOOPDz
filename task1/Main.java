@@ -1,7 +1,8 @@
 package task1;
 
+import task1.model.Comparator.ComparatorHumanPlaceOfBirth;
+import task1.model.Comparator.ComporatorHumanAge;
 import task1.model.FamilyTree;
-//import task1.Serializable.FileHandler;
 import task1.model.Human;
 import task1.model.Comparator.ComporatorHumanName;
 import task1.model.IO;
@@ -17,13 +18,15 @@ public class Main {
         FamilyTree<Human> familyTree = new FamilyTree<>();
 
 
-        familyTree.addFamilyTree(new Human("Олег", "Male.", 48, "Moscow",null, null, "Ирина", null);
-        familyTree.addFamilyTree(new Human("Ирина", "Female.", 48, "Moscow", null, "Олег", null, null);
+        familyTree.addFamilyTree(new Human("Oleg", "Male", 48, "Moscow",null, null));
+        familyTree.addFamilyTree(new Human("Irina", "Female", 48, "Moscow", null, null));
         familyTree.getByName("Андрей");
 
         View view = new Console();
         IO serialize = new IO();
         ComporatorHumanName sortName = new ComporatorHumanName();
+        ComporatorHumanAge sortAge = new ComporatorHumanAge();
+        ComparatorHumanPlaceOfBirth sortPlaceOfBirth = new ComparatorHumanPlaceOfBirth();
         new Presenter(view, familyTree, serialize, sortAge,sortName, sortPlaceOfBirth);
         view.start();
 
