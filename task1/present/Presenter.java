@@ -8,7 +8,7 @@ import task1.model.Human;
 import task1.model.IO;
 import task1.ui.View;
 
-import java.time.LocalDate;
+
 
 public class Presenter {
     private View view;

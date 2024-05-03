@@ -1,7 +1,6 @@
 package task1.ui;
 
 import task1.ui.comand.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
