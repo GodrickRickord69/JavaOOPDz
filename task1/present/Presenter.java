@@ -4,7 +4,6 @@ import task1.model.Comparator.ComparatorHumanPlaceOfBirth;
 import task1.model.Comparator.ComporatorHumanAge;
 import task1.model.Comparator.ComporatorHumanName;
 import task1.model.FamilyTree;
-//import task1.model.Gender;
 import task1.model.Human;
 import task1.model.IO;
 import task1.ui.View;
@@ -54,10 +53,6 @@ public class Presenter {
         serialize.load("TreeFamily.data");
     }
 
-//    public void sortFamilyName() {
-//        familyConnect.getFamilyTree().sort(null);
-//        view.print("Сортировка завершена !");
-//    }
 
     public void sortByName(){
         familyConnect.getFamilyTree().sort(null);

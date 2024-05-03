@@ -1,7 +1,6 @@
 package task1.model.Comparator;
 
 import task1.model.Human;
-
 import java.util.Comparator;
 
 public class ComparatorHumanPlaceOfBirth implements Comparator<Human>{
