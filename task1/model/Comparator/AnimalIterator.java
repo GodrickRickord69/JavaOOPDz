@@ -1,7 +1,6 @@
 package task1.model.Comparator;
 
 import task1.model.Animal;
-
 import java.util.Iterator;
 import java.util.List;
 

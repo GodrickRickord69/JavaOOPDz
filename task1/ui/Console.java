@@ -1,9 +1,6 @@
 package task1.ui;
 
-//import task1.model.Gender;
 import task1.present.Presenter;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Console implements View {
